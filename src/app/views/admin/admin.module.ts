@@ -10,8 +10,8 @@ import { LoginComponent } from './components/login/login.component'; // Import L
   imports: [
     CommonModule,
     AdminRoutingModule,
-    HomeComponent,
     LoginComponent,
+    HomeComponent
   ]
 })
 export class AdminModule { }
