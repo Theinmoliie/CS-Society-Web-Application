@@ -1,0 +1,39 @@
+/* Style the carousel container to take the full header height */
+.carousel {
+    width: 100%; /* Full width */
+    height: 50vh; /* Full viewport height for header section */
+  }
+  
+  .carousel-inner {
+    width: 100%; /* Full width */
+    height: 100%; /* Ensure inner matches carousel height */
+  }
+  
+  .carousel-item {
+    height: 100%; /* Fill the height of the carousel */
+    width: 100%; /* Full width */
+  }
+  
+  /* Style images to fit the carousel properly */
+  .carousel-item img {
+    width: 100%; /* Fill the width of the carousel */
+    height: 100%; /* Fill the height of the carousel */
+    object-fit: contain; /* Ensure the full image is displayed */
+  }
+  
+ .carousel-item {
+  width: 100%;
+  height: 100%; /* Make each item fill the carousel */
+  background-size: cover; /* Cover the entire carousel */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Avoid tiling */
+}
+
+.carousel-indicators button {
+    background-color: white;  /* Set the indicator color to white */
+  }
+  
+  .carousel-indicators .active {
+    background-color: white;  /* Set the active indicator to white */
+  }
+  
