@@ -1,0 +1,70 @@
+<!-- Header of the modal containing the title and a close button -->
+<div class="modal-header">
+  <h5 class="modal-title">{{ selectedMerchandise.title }}</h5> <!-- Displays the title of the selected merchandise dynamically -->
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="closeModal()"
+  ></button>
+</div>
+
+<!-- Body of the modal containing product details -->
+<div class="modal-body" id="modal-body-merchandise">
+  <!-- Product Image -->
+  <!-- Centered product image with margin below -->
+  <!-- Dynamically binds the product's image URL -->
+  <!-- Bootstrap classes for responsive and rounded styling -->
+  <!-- Limits the image height to ensure consistent modal size -->
+  <div class="text-center mb-4">
+    <img
+      [src]="selectedMerchandise.imageUrl"
+      alt="Product Image"
+      class="img-fluid rounded"
+      style="max-height: 200px"
+    />
+  </div>
+
+  <!-- Product Details -->
+  <p class="mb-2">
+    <strong>Price:</strong> {{ selectedMerchandise.price | currency : "RM" }}
+  </p>
+  <p>{{ selectedMerchandise.description }}</p>   <!-- Displays the product description dynamically -->
+
+  <!-- Size Dropdown -->
+  <div class="mb-3">
+    <label for="size" class="form-label">Choose Size</label>
+    <select id="size" [(ngModel)]="selectedSize" class="form-select">
+      <option *ngFor="let size of availableSize" [value]="size">
+        {{ size }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Quantity Input -->
+  <div class="mb-3">
+    <label for="quantity" class="form-label">Enter Quantity</label>
+    <input
+      type="number"
+      id="quantity"
+      [(ngModel)]="selectedQuantity"
+      min="1"
+      class="form-control"
+    />
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">
+    Cancel
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    [disabled]="!selectedSize"
+    (click)="confirmAddCart()"
+  >
+    Confirm
+  </button>
+</div>

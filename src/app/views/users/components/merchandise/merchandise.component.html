@@ -1,0 +1,35 @@
+<div class="container h-100 position-relative px-5" style="margin-top: 200px">
+  <!-- Shopping Cart Section -->
+  <div class="d-flex justify-content-end mb-4">
+    <a
+      [routerLink]="'/users/cart'"
+      class="position-relative text-dark text-decoration-none"
+    >
+      <!-- shopping cart icon -->
+      <i class="fas fa-shopping-cart fs-3"></i>
+      <!-- Badge for Item Count -->
+      <span
+        class="position-absolute bg-danger text-white small fw-bold d-flex align-items-center justify-content-center rounded-circle"
+        style="width: 1.5rem; height: 1.5rem; top: -0.5rem; right: -1rem"
+        *ngIf="cartItemsCount > 0"
+      >
+        {{ cartItemsCount }}
+      </span>
+    </a>
+  </div>
+
+  <!-- Merchandise Section -->
+  <div class="row justify-content-center align-items-center h-100 mt-4">
+    <ng-container *ngIf="merchandiseItem != null">
+      <div
+        class="col-md-4 d-flex justify-content-center mb-4"
+        *ngFor="let merchandise of merchandiseItem"
+      >
+        <app-card-merchandise
+          [merchandise]="merchandise"
+          (openModal)="openModal($event)"
+        ></app-card-merchandise>
+      </div>
+    </ng-container>
+  </div>
+</div>

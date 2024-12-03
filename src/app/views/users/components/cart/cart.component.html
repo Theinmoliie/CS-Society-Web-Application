@@ -1,0 +1,32 @@
+<div class="container py-4 h-100">
+  <div class="d-flex flex-column h-100">
+    <!-- Table Component -->
+    <div class="flex-grow-1 mb-4">
+      <!-- displays the card-cart-table -->
+      <!-- Passes the cartList array as an input to the card-cart-table component -->
+      <app-card-cart-table [cartList]="cartList" (updateCartList)="updateCartList($event)"></app-card-cart-table>
+    </div>
+
+    <!-- Button -->
+    <div class="d-flex justify-content-center">
+
+      <!-- Applies Bootstrap button styling with a dark theme, button larger, button text to uppercase, button width to 25% of the container, vertical padding of 0.5rem (8px), button text bold, font size to 16px -->
+      <!-- Applies btn-dark when there are items in the cart -->
+      <!-- Applies btn-secondary (a lighter gray color) when the cart is empty -->
+      <!-- Disables the button if the cart is empty -->
+      <button
+      class="btn btn-lg text-uppercase w-25 py-2 fw-bold"
+      style="font-size: 1rem; background-color: #6a0dad; color: white; border: none;"
+      [class.disabled]="cartList.length === 0"
+      [ngClass]="{
+        'btn-btn-dark': cartList.length > 0,
+        'btn-secondary': cartList.length === 0
+     }"
+      [disabled]="cartList.length === 0"
+     (click)="navToPaymentPage()"
+    >
+      Checkout
+    </button>
+    </div>
+  </div>
+</div>

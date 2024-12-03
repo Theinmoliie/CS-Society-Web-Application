@@ -1,0 +1,10 @@
+.thead-light th {
+  background-color: #f8f9fa; /* Light background color for table headers */
+  color: #212529;           /* Dark text color */
+  border-top: 1px solid #dee2e6; /* Top border  */
+  border-bottom: 1px solid #dee2e6; /* Bottom border  */
+  text-align: left;         /* Align text to the left */
+  font-weight: 400;         /* Regular font weight */
+  font-size: 0.8rem;        /* Small font size */
+  padding-left: 1.2rem;     /* Add padding to the left */
+}

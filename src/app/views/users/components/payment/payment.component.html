@@ -1,0 +1,64 @@
+<div
+  class="container h-100 position-relative"
+  *ngIf="!successUpload; else successMessage"
+>
+
+<!-- "Scan & Pay Now" Text -->
+<div class="d-flex justify-content-center align-items-center mt-3">
+  <h2 class="text-center text-uppercase fw-bold">Scan & Pay Now</h2>
+</div>
+
+<!-- Displays the QR code image -->
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="d-flex justify-content-center align-items-center">
+      <img
+        src="assets/qrcode.png"
+        alt=""
+        class="rounded-top img-fluid"
+        style="height: 350px"
+      />
+    </div>
+  </div>
+
+  <!-- Upload Receipt Button -->
+  <div class="d-flex justify-content-center align-items-center mt-4">
+    <div class="position-relative">
+      <label
+      for="upload"
+      class="btn text-uppercase fw-bold px-4 py-2"
+      style="cursor: pointer; background-color: #6a0dad; color: white; border: none;"
+      >
+      Upload Receipt
+    </label>
+      <input
+        type="file"
+        id="upload"
+        class="d-none"
+        (change)="onUpload($event)"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Defining a template that is rendered when the receipt uploaded successfuly -->
+<ng-template #successMessage>
+  <div class="container h-100 position-relative">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <h1 class="fs-1">Successfully Placed Order!</h1>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <div class="position-relative">
+        <button
+        class="btn text-uppercase fw-bold px-4 py-2"
+        type="button"
+        (click)="navToHome()"
+        style="background-color: #6a0dad; color: white; border: none;"
+        >
+        Back to Home
+      </button>
+
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,4 @@
+.custom-modal-width {
+  width: 80%;  /* Adjust width as needed */
+  max-width: 600px;  /* Max width to avoid overly large modals */
+}
