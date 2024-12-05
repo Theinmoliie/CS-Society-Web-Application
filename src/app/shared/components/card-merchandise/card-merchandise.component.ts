@@ -14,7 +14,7 @@ export class CardMerchandiseComponent {
 
   //Declares an event named openModal
   //Allows the CardMerchandiseComponent to emit a number (merchandise ID) to its parent component
-  @Output() openModal = new EventEmitter<number>();
+  @Output() openModal = new EventEmitter<string>();
 
   //Determine modal (if used) is currently shown or not
   showModal: boolean = false;
