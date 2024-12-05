@@ -1,0 +1,84 @@
+<!-- Modal Header -->
+<!-- Displays the modal title and a close button that calls closeModal() when clicked -->
+<div class="modal-header">
+  <h5 class="modal-title">Add New Merchandise</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="closeModal()"
+  ></button>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+
+  <!-- ID Field -->
+  <div class="mb-3">
+    <label for="title" class="form-label">ID</label>
+    <input
+      id="title"
+      type="text"
+      [(ngModel)]="newMerchant.id"
+      class="form-control"
+      placeholder="Enter merchandise ID"
+    />
+  </div>
+
+  <!-- Title Field -->
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      id="title"
+      type="text"
+      [(ngModel)]="newMerchant.title"
+      class="form-control"
+      placeholder="Enter merchandise title"
+    />
+  </div>
+
+  <!-- Image Field -->
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input
+      id="image"
+      type="file"
+      class="form-control"
+    />
+  </div>
+
+  <!-- Price Field -->
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input
+      id="price"
+      type="number"
+      [(ngModel)]="newMerchant.price"
+      class="form-control"
+      placeholder="Enter price"
+      min="0"
+    />
+  </div>
+
+  <!-- Description Field -->
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      id="description"
+      [(ngModel)]="newMerchant.description"
+      class="form-control"
+      placeholder="Enter description"
+      rows="3"
+    ></textarea>
+  </div>
+</div>
+
+<!-- Modal Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">
+    Cancel
+  </button>
+  <button type="button" class="btn btn-primary" (click)="updateMerchandiseMethod()">
+    Save
+  </button>
+</div>

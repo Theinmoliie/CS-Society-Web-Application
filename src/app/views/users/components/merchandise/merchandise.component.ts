@@ -52,7 +52,7 @@ export class MerchandiseComponent implements OnInit{
 
   // If the merchandise exists, proceeds to open the modal
   // Opens a modal using BsModalService
-  openModal(id: number) {
+  openModal(id: string) {
     const filteredMerchandise = this.merchandiseItem.filter((merchandise:Merchandise) => merchandise.id == id);
     if (filteredMerchandise.length > 0) {
 

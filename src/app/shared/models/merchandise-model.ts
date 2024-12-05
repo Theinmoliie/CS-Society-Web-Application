@@ -2,7 +2,7 @@
 // easy to check for the variables
 
 export class Merchandise {
-  id: number; // id of merchandise product
+  id: string; // id of merchandise product
   title: string; // product name
   price: number; // product price
   imageUrl: string; //product image

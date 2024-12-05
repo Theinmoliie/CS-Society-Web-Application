@@ -1,0 +1,18 @@
+<div class="modal-content">
+  <!-- Modal Header -->
+  <div class="modal-header">
+    <h5 class="modal-title">{{ title }}</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+
+  <!-- Modal Body -->
+  <div class="modal-body">
+    <p>{{ content }}</p>
+  </div>
+
+  <!-- Modal Footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="handleCancel()">{{ cancelText }}</button>
+    <button type="button" class="btn btn-primary" (click)="handleConfirm()">{{ confirmText }}</button>
+  </div>
+</div>
