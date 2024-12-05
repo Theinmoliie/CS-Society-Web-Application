@@ -1,0 +1,75 @@
+img {
+    max-width: 100%; /* Ensures the image doesn't exceed its container width */
+    height:540px; /* Maintains aspect ratio */
+    display: block; /* Removes extra inline spacing */
+    margin: 0 auto; /* Centers the image */
+    margin-bottom: 20px;;
+  }
+
+  p {
+    font-size: 1.2rem; /* Adjust the font size */
+    padding: 5px;
+  }
+
+  .carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:70%;
+    margin:auto;
+  }
+
+  .carousel-indicators button {
+    background-color: white;  /* Set the indicator color to white */
+  }
+  
+  .carousel-indicators .active {
+    background-color: white;  /* Set the active indicator to white */
+  }
+
+  .fas{
+    margin-right:1.5rem;
+  }
+ 
+  .eventTitle {
+    display: inline-block; /* Makes the background wrap only the text */
+    background-color: blueviolet; /* Replace with your desired background color */
+    color: white; /* Sets the text color to white */
+    padding: 0.5rem 1rem; /* Adds spacing around the text */
+    border-radius: 0.5rem; /* Rounds the corners */
+    font-size: 1.5rem; /* Adjusts the font size */
+    font-weight: bold; /* Ensures the text is bold */
+    text-align: center; /* Centers the text inside the element */
+    margin-bottom:1.5rem;
+  }
+  
+  .event-detail:hover{
+    margin-bottom: 4.0rem;
+    transform: translateY(-15px); /* Slightly raises the event on hover */
+    box-shadow: 0 4px 16px rgba(191, 8, 185, 0.5), 0 8px 32px rgba(191, 8, 185, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+  .gallery_title{
+    text-align: center;
+  }
+
+  .d{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+  }
+  
+  .details{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: inline-block; /* Makes the background wrap only the text */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  
+  

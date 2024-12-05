@@ -1,4 +1,4 @@
-/* Style the carousel container to take the full header height */
+  /* Style the carousel container to take the full header height */
 .carousel {
     width: 100%; /* Full width */
     height: 50vh; /* Full viewport height for header section */
@@ -29,6 +29,7 @@
   background-repeat: no-repeat; /* Avoid tiling */
 }
 
+
 .carousel-indicators button {
     background-color: white;  /* Set the indicator color to white */
   }
@@ -37,3 +38,63 @@
     background-color: white;  /* Set the active indicator to white */
   }
   
+
+  #achievements p {
+    font-size: 1.2rem; /* Adjust the font size */
+  }
+
+  .title {
+    display: flex;           /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+  }
+
+  .titlecard {
+    background-color: blueviolet;
+    color: white;
+    width: 550px;
+    height: 80px;
+    border-radius: 50px;
+  
+    /* Flexbox for centering */
+    display: flex; 
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+  }
+
+  .fas{
+    margin-right:0.5rem;
+  }
+
+  #achievements img {
+    max-width: 100%; /* Ensures the image doesn't exceed its container width */
+    height:840px; /* Maintains aspect ratio */
+    display: block; /* Removes extra inline spacing */
+    margin: 0 auto; /* Centers the image */
+    margin-bottom: 20px;;
+  }
+  
+  .card-container {
+    display: grid;           /* Enable grid */
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Responsive columns */
+    gap: 40px;               /* Add spacing between cards */
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    text-align: center;      /* Center the text */
+  }
+
+  .fixed-height {
+    height: 300px; /* Set your desired height */
+    object-fit: cover; /* Ensures the image fills the area while maintaining aspect ratio */
+    width: 100%; /* Ensures the image spans the full width of the card */
+  }
+  
+  .card-title {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
