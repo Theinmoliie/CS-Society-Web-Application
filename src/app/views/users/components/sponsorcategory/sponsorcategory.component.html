@@ -1,0 +1,190 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #6a0dad; padding: 16px 0;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand text-white" href="#" style="font-size: 18px;">Navbar</a> -->
+      <a href=""><img src="../assets/cs_logo.png" alt="cs_logo" style="width: 70px; height: 70px; margin-right: 40px; margin-left: 20px;"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 20px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#" style="font-size: 20px; margin-right: 10px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" [routerLink]="['/users/portfolio']"  style="font-size: 20px; margin-right: 10px;">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/merchandise']" style="font-size: 20px; margin-right: 10px;">Merchandise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/sponsorshiphome']" style="font-size: 20px; margin-right: 10px;">Sponsorship</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; padding: 0px 10px 0 10px; border-radius: 50px;">
+          <button class="btn btn-outline-light" type="submit" style="font-size: 20px; border-radius: 50px; margin-right: 50px; margin-left: 10px;">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorship Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+       
+        .sponsorship-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .sponsorship-category {
+            flex: 1 1 45%;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .sponsorship-category h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .sponsorship-category ul {
+            padding: 0;
+            list-style: none;
+        }
+        .sponsorship-category ul li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .payment-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .qr-code img {
+            max-width: 150px;
+        }
+        .payment-details {
+            flex: 1;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+        .button-section {
+            display: flex;
+            justify-content: right;
+            text-align: right;
+            margin-top: 20px;
+        }
+        .next-button {
+             padding: 10px 20px;
+              background-color: #ffc107;
+              color: #000;
+              border: none;
+              border-radius: 5px;
+              font-weight: bold;
+              cursor: pointer;
+        }
+        .next-button:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The following information outlines the sponsorship categories and their respective perks.</h1>
+
+        <!-- Sponsorship categories -->
+        <div class="sponsorship-categories">
+            <div class="sponsorship-category">
+                <h3>Platinum Sponsor (Highest Tier)</h3>
+                <ul>
+                    <li><strong>Logo Placement:</strong> Premium placement on all event banners, posters, and digital materials.</li>
+                    <li><strong>Acknowledgment:</strong> Special mention during opening and closing ceremonies.</li>
+                    <li><strong>Social Media Feature:</strong> Dedicated post on all official social media pages.</li>
+                    <li><strong>Booth Space:</strong> Priority access to set up a booth during the event.</li>
+                    <li><strong>Certificate of Appreciation:</strong> Personalized platinum-tier certificate.</li>
+                    <li><strong>Free Passes:</strong> Complimentary event tickets (up to 5).</li>
+                </ul>
+            </div>
+            <div class="sponsorship-category">
+                <h3>Gold Sponsor</h3>
+                <ul>
+                    <li><strong>Logo Placement:</strong> Prominent logo placement on banners, posters, and digital materials.</li>
+                    <li><strong>Acknowledgment:</strong> Mention during the event’s opening speech.</li>
+                    <li><strong>Social Media Feature:</strong> Inclusion in a group sponsor appreciation post.</li>
+                    <li><strong>Booth Space:</strong> Opportunity to set up a booth (subject to availability).</li>
+                    <li><strong>Certificate of Appreciation:</strong> Personalized gold-tier certificate.</li>
+                    <li><strong>Free Passes:</strong> Complimentary event tickets (up to 3).</li>
+                </ul>
+            </div>
+            <div class="sponsorship-category">
+                <h3>Silver Sponsor</h3>
+                <ul>
+                    <li><strong>Logo Placement:</strong> Medium-sized logo placement on banners and digital materials.</li>
+                    <li><strong>Acknowledgment:</strong> Mention in sponsor appreciation slides during the event.</li>
+                    <li><strong>Social Media Feature:</strong> Logo included in a group sponsor appreciation post.</li>
+                    <li><strong>Certificate of Appreciation:</strong> Personalized silver-tier certificate.</li>
+                    <li><strong>Free Passes:</strong> Complimentary event tickets (up to 2).</li>
+                </ul>
+            </div>
+            <div class="sponsorship-category">
+                <h3>Bronze Sponsor</h3>
+                <ul>
+                    <li><strong>Logo Placement:</strong> Small logo placement on banners and digital materials.</li>
+                    <li><strong>Acknowledgment:</strong> Mention in sponsor appreciation slides during the event.</li>
+                    <li><strong>Social Media Feature:</strong> Name included in a group sponsor appreciation post.</li>
+                    <li><strong>Certificate of Appreciation:</strong> Personalized bronze-tier certificate.</li>
+                    <li><strong>Free Pass:</strong> Complimentary event ticket (1).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Payment section -->
+        <div class="payment-section">
+            <div class="qr-code">
+                <img src="assets/qrcode.png" alt="QR Code">
+            </div>
+            <div class="payment-details">
+                <p><strong>BANK ACCOUNT HOLDER NAME:</strong> Universiti Sains Malaysia</p>
+                <p><strong>BANK NAME:</strong> CIMB Bank</p>
+                <p><strong>ACCOUNT NUMBER:</strong> 0987654321</p>
+            </div>
+        </div>
+
+        <!-- Next button -->
+        <div class="button-section">
+            <button class="next-button"[routerLink]="['/users/sponsorterms']">NEXT</button>
+        </div>
+    </div>
+</body>
+

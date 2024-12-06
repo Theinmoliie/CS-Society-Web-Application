@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #6a0dad; padding: 16px 0;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand text-white" href="#" style="font-size: 18px;">Navbar</a> -->
+      <a href=""><img src="../assets/cs_logo.png" alt="cs_logo" style="width: 70px; height: 70px; margin-right: 40px; margin-left: 20px;"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 20px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#" style="font-size: 20px; margin-right: 10px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" [routerLink]="['/users/portfolio']"  style="font-size: 20px; margin-right: 10px;">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/merchandise']" style="font-size: 20px; margin-right: 10px;">Merchandise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/sponsorshiphome']" style="font-size: 20px; margin-right: 10px;">Sponsorship</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; padding: 0px 10px 0 10px; border-radius: 50px;">
+          <button class="btn btn-outline-light" type="submit" style="font-size: 20px; border-radius: 50px; margin-right: 50px; margin-left: 10px;">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Empower CS Sponsorship Program</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              margin: 0;
+              padding: 20px;
+              background-color: #f9f9f9;
+          }
+          .container {
+              max-width: 800px;
+              margin: 0 auto;
+              background: #fff;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          h2 {
+              text-align: center;
+              color: #333;
+          }
+          .form-group {
+              margin-bottom: 15px;
+          }
+          label {
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+          }
+          input[type="file"], input[type="checkbox"] {
+              margin-top: 5px;
+          }
+          .terms {
+              margin-top: 20px;
+          }
+          .submit-btn {
+             display: flex;
+             justify-content: right;
+             text-align: right;
+             margin-top: 20px;
+              padding: 10px 20px;
+              background-color: #ffc107;
+              color: #000;
+              border: none;
+              border-radius: 5px;
+              font-weight: bold;
+              cursor: pointer;
+          }
+          .submit-btn:hover {
+              background-color: #e0a800;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+              <form>
+              <div class="form-group">
+                  <label for="receipt">Please upload the receipt as proof of payment:</label>
+                  <input type="file" id="receipt" name="receipt" accept="image/*,application/pdf">
+              </div>
+  
+              <div class="terms">
+                  <h2>Terms and Conditions</h2>
+                  <ol>
+                      <li><strong>Eligibility:</strong> The sponsorship program is open to individuals, organizations, and businesses that wish to support initiatives, events, and activities aimed at advancing the Computer Science community at USM.</li>
+                      <li><strong>Use of Logo and Branding:</strong> Sponsors permit the Empower CS program to use their company logo, name, and branding in relation to the program, events, and promotional materials.</li>
+                      <li><strong>Payment:</strong> All payments must be made in full upon agreement to confirm sponsorship. The payment must be completed as per the details provided in the program.</li>
+                      <li><strong>Refund Policy:</strong> Sponsorship fees are non-refundable once payment has been made and confirmed.</li>
+                      <li><strong>Acknowledgment:</strong> Sponsors will receive acknowledgment through various channels, including event materials and social media, as outlined in the sponsorship package.</li>
+                      <li><strong>Cancellation:</strong> Empower CS reserves the right to cancel or modify the program in the event of unforeseen circumstances.</li>
+                  </ol>
+              </div>
+  
+              <div class="form-group">
+                  <label>
+                      <input type="checkbox" id="agree" name="agree">
+                      By selecting this option, you confirm that you have read, understood, and agree to the terms and conditions.
+                  </label>
+              </div>
+  
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>
+      </div>
+  </body>
+ 
+  

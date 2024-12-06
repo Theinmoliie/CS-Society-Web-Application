@@ -8,14 +8,27 @@ import { MerchandiseComponent } from './components/merchandise/merchandise.compo
 import { CartComponent } from './components/cart/cart.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PastEventsComponent } from './components/past-events/past-events.component';
+import { SponsorshiphomeComponent } from './components/sponsorshiphome/sponsorshiphome.component';
+import { SponsorshipfaqComponent } from './components/sponsorshipfaq/sponsorshipfaq.component';
+import { SponsorslistComponent } from './components/sponsorslist/sponsorslist.component';
+import { SponsorsregisterComponent } from './components/sponsorsregister/sponsorsregister.component';
+import { SponsorcategoryComponent } from './components/sponsorcategory/sponsorcategory.component';
+import { SponsorstermsComponent } from './components/sponsorsterms/sponsorsterms.component';
+import { SponsorsubmissionComponent } from './components/sponsorsubmission/sponsorsubmission.component';
 
 @NgModule({
   declarations: [
     MerchandiseComponent,
     CartComponent,
     PaymentComponent,
-    
-
+    SponsorshiphomeComponent,
+    SponsorshipfaqComponent,
+    SponsorslistComponent,
+    SponsorsregisterComponent,
+    SponsorcategoryComponent,
+    SponsorstermsComponent,
+    SponsorsubmissionComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -24,7 +37,6 @@ import { PastEventsComponent } from './components/past-events/past-events.compon
     PortfolioComponent,
     SharedModule,
     PastEventsComponent,
-    
 
   ]
 })
