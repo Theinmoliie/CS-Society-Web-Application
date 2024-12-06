@@ -4,12 +4,16 @@ import { CardMerchandiseComponent } from "./components/card-merchandise/card-mer
 import { ModalMerchandiseComponent } from "./components/modal-merchandise/modal-merchandise.component";
 import { FormsModule } from "@angular/forms";
 import { CardCartTableComponent } from './components/card-cart-table/card-cart-table.component';
+import { ModalAddMerchandiseComponent } from "./components/modal-add-merchandise/modal-add-merchandise.component";
+import { ModalConfirmationComponent } from "./components/modal-confirmation/modal-confirmation.component";
 
 @NgModule({
     declarations: [
         CardMerchandiseComponent,
         ModalMerchandiseComponent,
-        CardCartTableComponent
+        CardCartTableComponent,
+        ModalAddMerchandiseComponent,
+        ModalConfirmationComponent
     ],
     imports: [
         CommonModule,
@@ -18,7 +22,9 @@ import { CardCartTableComponent } from './components/card-cart-table/card-cart-t
     exports: [
         CardMerchandiseComponent,
         ModalMerchandiseComponent,
-        CardCartTableComponent
+        CardCartTableComponent,
+        ModalAddMerchandiseComponent,
+        ModalConfirmationComponent
     ]
   })
   export class SharedModule { }

@@ -1,14 +1,16 @@
-import { Component, AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],  // No need to import RouterLink here when using router.navigate()
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+  styleUrls: ['./portfolio.component.css']  // Corrected to styleUrls (plural)
 })
 export class PortfolioComponent implements AfterViewInit {
   
+
   ngAfterViewInit(): void {
     // Initialize the carousel after the view has been initialized
     const carouselElement = document.getElementById('carouselExampleDark');
@@ -22,4 +24,5 @@ export class PortfolioComponent implements AfterViewInit {
       });
     }
   }
+
 }

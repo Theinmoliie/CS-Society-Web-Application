@@ -1,0 +1,71 @@
+<div class="container py-4">
+  <div class="d-flex align-items-center mb-4">
+    <!-- Title -->
+    <h1 class="fs-4 fw-bold text-dark">Order Details</h1>
+  </div>
+
+  <!-- Order Section -->
+   <!-- Table header -->
+  <div class="bg-white shadow rounded overflow-hidden">
+    <table class="table mb-0">
+      <thead class="thead-light">
+        <tr>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 12%;">Order ID</th>
+          <th class="px-3 py-2 text-sm fw-semibold text-end" style="width: 12%;">Amount (RM)</th>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 30%;">Order Items</th>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 10%;">User Name</th>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 10%;">Email Address</th>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 5%;">Contact No.</th>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 5%;">Receipt</th>
+          <th class="px-3 py-2 text-sm fw-semibold" style="width: 10%;">Action</th>
+        </tr>
+      </thead>
+
+      <!-- table body -->
+      <!-- Values of amount always display 2 decimal places -->
+      <!-- Displays only the filename of the receipt instead of the full URL -->
+      <!-- Provides a clickable link that opens the receipt in a new tab -->
+      <tbody>
+          <ng-container *ngIf="orderList.length > 0; else noRecords">
+              <tr *ngFor="let order of orderList; let i = index" class="align-middle">
+                  <td class="px-3 py-2 text-muted small">{{ order.id }}</td>
+                  <td class="px-3 py-2 text-muted small text-end">{{ order.amount | number:'1.2-2' }}</td>
+                  <td class="px-3 py-2 text-muted small">
+                      <div *ngFor="let orderItem of order.orderedItem">
+                          <span>{{ orderItem.quantity }} x {{ orderItem.title }} (Size: {{ orderItem.size }})</span> <br>
+                      </div>
+                  </td>
+                  <td class="px-3 py-2 text-muted small">{{ order.userName }}</td>
+                  <td class="px-3 py-2 text-muted small">{{ order.email }}</td>
+                  <td class="px-3 py-2 text-muted small">{{ order.contact }}</td>
+                  <td class="px-3 py-2 text-muted small">
+                      <a href="{{ order.receiptUrl }}" target="_blank">
+                      {{ order.receiptUrl | slice: order.receiptUrl.lastIndexOf('/') + 1 }}
+                      </a>
+                  </td>
+
+                  <!-- A button to delete the order using the deleteOrder(order) method -->
+                  <td class="px-3 py-2 text-muted small">
+                  <button
+                      (click)="deleteOrder(order)"
+                      class="btn btn-danger btn-sm"
+                  >
+                      Delete
+                  </button>
+                  </td>
+              </tr>
+          </ng-container>
+          <!-- If there are no orders in orderList, this template will be displayed, showing a message: "No orders found." -->
+          <ng-template #noRecords>
+              <tr class="align-middle text-center" style="height: 4rem;">
+                  <td colspan="8" class="fw-semibold text-muted fs-5">
+                    No orders found.
+                  </td>
+              </tr>
+          </ng-template>
+      </tbody>
+
+
+    </table>
+  </div>
+</div>

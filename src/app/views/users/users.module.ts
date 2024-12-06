@@ -7,12 +7,14 @@ import { SharedModule } from '../../shared/shared.module';
 import { MerchandiseComponent } from './components/merchandise/merchandise.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { PastEventsComponent } from './components/past-events/past-events.component';
 
 @NgModule({
   declarations: [
     MerchandiseComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    
 
   ],
   imports: [
@@ -21,6 +23,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     HomeComponent,
     PortfolioComponent,
     SharedModule,
+    PastEventsComponent,
+    
 
   ]
 })
