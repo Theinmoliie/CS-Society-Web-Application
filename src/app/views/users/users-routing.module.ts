@@ -11,6 +11,7 @@ import { SponsorshipfaqComponent } from './components/sponsorshipfaq/sponsorship
 import { SponsorslistComponent } from './components/sponsorslist/sponsorslist.component';
 import { SponsorsregisterComponent } from './components/sponsorsregister/sponsorsregister.component';
 import { SponsorcategoryComponent } from './components/sponsorcategory/sponsorcategory.component';
+import { ParticipantComponent } from './components/participant/participant.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'sponsorshipfaq' , component: SponsorshipfaqComponent},
   { path: 'sponsorslist' , component: SponsorslistComponent},
   { path: 'sponsorsregister' , component: SponsorsregisterComponent},
-  { path: 'sponsorscategory' , component: SponsorcategoryComponent}
+  { path: 'sponsorscategory' , component: SponsorcategoryComponent},
+  { path: 'participation', component: ParticipantComponent }
  
 ];
 
