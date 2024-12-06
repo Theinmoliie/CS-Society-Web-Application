@@ -15,6 +15,8 @@ import { SponsorsregisterComponent } from './components/sponsorsregister/sponsor
 import { SponsorcategoryComponent } from './components/sponsorcategory/sponsorcategory.component';
 import { SponsorstermsComponent } from './components/sponsorsterms/sponsorsterms.component';
 import { SponsorsubmissionComponent } from './components/sponsorsubmission/sponsorsubmission.component';
+import { RouterModule } from '@angular/router';
+import { ParticipantComponent } from './components/participant/participant.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,15 @@ import { SponsorsubmissionComponent } from './components/sponsorsubmission/spons
     SponsorstermsComponent,
     SponsorsubmissionComponent,
   
+    ParticipantComponent
+    
   ],
   imports: [
     CommonModule,
     UsersRoutingModule,
+    SharedModule,
+    PastEventsComponent,
+    RouterModule,
     HomeComponent,
     PortfolioComponent,
     SharedModule,

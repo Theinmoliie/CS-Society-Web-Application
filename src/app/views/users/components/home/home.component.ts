@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   standalone:true,
@@ -9,6 +10,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  constructor(private router: Router) {} 
+  navigateToParticipation() {
+    this.router.navigate(['users/participation']); // Navigate to the 'participation' route
+  }
 
   slides = [
     {
