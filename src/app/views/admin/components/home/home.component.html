@@ -59,8 +59,47 @@
             <h3 class="event-title fw-bold">Log Off Night 2024</h3>
             <p class="lead event-description">An unforgettable celebration for CS graduates! This year’s Log Off Night is a night to honor the incredible achievements of our Computer Science students and bid farewell to our final-year students. Don't miss the excitement!</p>
             <p class="text-muted event-info">Date: July 7, 2024 | Location: Z Auditorium | Time: 6:00 PM</p>
-            <a href="editdetails.html" class="btn btn-primary btn-lg mt-3">Edit details</a>
-        </div>
+            <a href="#" class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#editDetailsModal">Edit details</a>
+            <!-- Modal -->
+             <div class="modal fade" id="editDetailsModal" tabindex="-1" aria-labelledby="editDetailsModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editDetailsModalLabel">Edit Event Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="eventTitle" class="form-label">Event Title</label>
+                        <input type="text" class="form-control" id="eventTitle" placeholder="Log Off Night 2024">
+                      </div>
+                      <div class="mb-3">
+                        <label for="eventDescription" class="form-label">Event Description</label>
+                        <textarea class="form-control" id="eventDescription" rows="3" placeholder="Description..."></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="eventDate" class="form-label">Event Date</label>
+                        <input type="date" class="form-control" id="eventDate">
+                      </div>
+                      <div class="mb-3">
+                        <label for="eventTime" class="form-label">Event Time</label>
+                        <input type="time" class="form-control" id="eventTime">
+                      </div>
+                      <div class="mb-3">
+                        <label for="eventLocation" class="form-label">Event Location</label>
+                        <input type="text" class="form-control" id="eventLocation" placeholder="Z Auditorium">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+</div>
         <!-- Image on the Right -->
         <div class="col-md-6">
             <img src="../assets/event1.png" alt="Log Off Night 2024" class="img-fluid rounded shadow-lg">
