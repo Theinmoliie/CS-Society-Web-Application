@@ -1,0 +1,179 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #6a0dad; padding: 16px 0;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand text-white" href="#" style="font-size: 18px;">Navbar</a> -->
+      <a href=""><img src="../assets/cs_logo.png" alt="cs_logo" style="width: 70px; height: 70px; margin-right: 40px; margin-left: 20px;"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 20px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#" style="font-size: 20px; margin-right: 10px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" [routerLink]="['/users/portfolio']"  style="font-size: 20px; margin-right: 10px;">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/merchandise']" style="font-size: 20px; margin-right: 10px;">Merchandise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/sponsorshiphome']" style="font-size: 20px; margin-right: 10px;">Sponsorship</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; padding: 0px 10px 0 10px; border-radius: 50px;">
+          <button class="btn btn-outline-light" type="submit" style="font-size: 20px; border-radius: 50px; margin-right: 50px; margin-left: 10px;">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>EmpowerCS Sponsor Registration</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f9f9f9;
+          }
+  
+          .container {
+              max-width: 800px;
+              margin: 20px auto;
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+  
+          h1 {
+              text-align: center;
+              font-size: 2rem;
+              font-weight: bold;
+              color: #000;
+              margin-bottom: 20px;
+          }
+          
+          p {
+              text-align: center;
+              color: #666 ;
+              margin-bottom: 20px;
+          }
+  
+          form {
+              display: flex;
+              flex-direction: column;
+          }
+  
+          .form-group {
+              margin-bottom: 20px;
+          }
+  
+          .form-group label {
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+          }
+  
+          .form-group input,
+          .form-group select,
+          .form-group textarea {
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              font-size: 1rem;
+              color: #333;
+          }
+  
+          .form-group textarea {
+              resize: vertical;
+              height: 100px;
+          }
+  
+          .next-btn {
+              text-align: right;
+          }
+  
+          .next-btn button {
+              padding: 10px 20px;
+              background-color: #ffc107;
+              color: #000;
+              border: none;
+              border-radius: 5px;
+              font-weight: bold;
+              cursor: pointer;
+          }
+  
+          .next-btn button:hover {
+              background-color: #e0a800;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <h1>EmpowerCS Sponsor Registration</h1>
+          <p>Thank you for your generous support! </p>
+          <p>Kindly fill out the details below to complete your sponsorship registration.</p>
+  
+          <!-- Form -->
+          <form action="#" method="post" enctype="multipart/form-data">
+              <!-- Section 1 -->
+              <div class="form-group">
+                  <label for="full-name">Full Name (Please provide your full name.)</label>
+                  <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                  <label for="email">Email Address (Enter your active email for further communication.)</label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                  <label for="organization-details">Organization Details (if applicable)</label>
+                  <textarea id="organization-details" name="organization_details" placeholder="Provide organization details"></textarea>
+              </div>
+  
+              <!-- Section 2 -->
+              <div class="form-group">
+                  <label for="sponsorship-type">Sponsorship Type</label>
+                  <select id="sponsorship-type" name="sponsorship_type">
+                      <option value="individual">Individual</option>
+                      <option value="corporate">Corporate</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="event-name">Event Name (Indicate the name of the event you wish to sponsor.)</label>
+                  <input type="text" id="event-name" name="event_name" placeholder="Enter event name">
+              </div>
+              <div class="form-group">
+                  <label for="amount">Sponsorship Amount (RM)</label>
+                  <input type="number" id="amount" name="sponsorship_amount" placeholder="Enter the amount you wish to contribute">
+              </div>
+              <div class="form-group">
+                  <label for="social-media">Permission to Share on Social Media</label>
+                  <select id="social-media" name="social_media_permission">
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="custom-message">Custom Message</label>
+                  <textarea id="custom-message" name="custom_message" placeholder="Write your personal message or notes"></textarea>
+              </div>
+  
+              <!-- Submit Button -->
+              <div class="next-btn">
+                  <button type="submit" [routerLink]="['/users/sponsorterms']">NEXT</button>
+              </div>
+          </form>
+      </div>
+  </body>
+ 
+ 

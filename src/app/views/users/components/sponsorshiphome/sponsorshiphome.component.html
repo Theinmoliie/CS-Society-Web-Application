@@ -1,0 +1,235 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #6a0dad; padding: 16px 0;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand text-white" href="#" style="font-size: 18px;">Navbar</a> -->
+      <a href=""><img src="../assets/cs_logo.png" alt="cs_logo" style="width: 70px; height: 70px; margin-right: 40px; margin-left: 20px;"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 20px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#" style="font-size: 20px; margin-right: 10px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" [routerLink]="['/users/portfolio']"  style="font-size: 20px; margin-right: 10px;">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/merchandise']" style="font-size: 20px; margin-right: 10px;">Merchandise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/sponsorshiphome']" style="font-size: 20px; margin-right: 10px;">Sponsorship</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; padding: 0px 10px 0 10px; border-radius: 50px;">
+          <button class="btn btn-outline-light" type="submit" style="font-size: 20px; border-radius: 50px; margin-right: 50px; margin-left: 10px;">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerCS Sponsorship Program</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-y: auto; /* Allows scrolling */
+        }
+
+        .home-title {
+              text-align: center;
+              font-size: 2rem;
+              font-weight: bold;
+              color: #000;
+              margin-bottom: 20px;
+        }
+
+        .container {
+            text-align: center;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Carousel Section */
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 20px;
+        }
+        .carousel img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .carousel button:hover {
+            background-color: #555;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+
+        /* Text Section */
+        .content h1 {
+            font-size: 2em;
+            color: #333;
+        }
+        .content p {
+            font-size: 1em;
+            color: #666;
+            margin: 10px 20px;
+            line-height: 1.6;
+        }
+
+        /* Statistics Section */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 50px auto;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background-color: #4B0082;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 45%;
+            margin: 10px;
+            text-align: center;
+        }
+        .stat-box h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .stat-box p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Buttons Section */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .button {
+            background-color: #FFA500;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 60%;
+        }
+        .button:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .stats {
+                flex-direction: column;
+            }
+            .stat-box {
+                width: 80%;
+            }
+            .button {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Carousel Section -->
+    <div class="container">
+        <div class="carousel">
+            <button class="prev" onclick="prevImage()">&#9664;</button>
+            <img id="carousel-image" src="team1.jpg" alt="Team 1">
+            <button class="next" onclick="nextImage()">&#9654;</button>
+        </div>
+        <div class="content">
+            <h1 class="home-title">EmpowerCS Sponsorship Program</h1>
+            <p>
+                Join hands with The Xypher in empowering the next generation of computer scientists at USM. Through our Sponsorship Program, 
+                you can support transformative initiatives, events, and activities aimed at advancing excellence and inclusivity within the Computer Science community.
+            </p>
+            <p>
+                Your sponsorship will directly contribute to innovative projects, leadership development, and opportunities for students to excel and make a difference in society.
+                Let’s work together to "Break the Ordinary" and shape a brighter future for tomorrow's tech leaders.
+            </p>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="container">
+        <div class="stats">
+            <div class="stat-box">
+                <h1>RM 20,000</h1>
+                <p>Total Funds Received</p>
+            </div>
+            <div class="stat-box">
+                <h1>15</h1>
+                <p>Number of Sponsors</p>
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <button class="button sponsor"[routerLink]="['/users/sponsorsregister']">Become a Sponsor</button>
+            <button class="button view" [routerLink]="['/users/sponsorslist']">View Sponsors</button>
+            <button class="button faq" [routerLink]="['/users/sponsorshipfaq']">Frequently Asked Questions</button>
+        </div>
+    </div>
+
+    <script>
+        const images = ["team1.jpg", "team2.jpg", "team3.jpg"];
+        let currentIndex = 0;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("carousel-image").src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("carousel-image").src = images[currentIndex];
+        }
+    </script>
+</body>
+
