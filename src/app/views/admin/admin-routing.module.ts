@@ -5,13 +5,15 @@ import { LoginComponent } from './components/login/login.component'; // Import L
 import { adminGuard } from './admin.guard';  // Import the adminGuard
 import { MerchandiseComponent } from './components/merchandise/merchandise.component';
 import { OrderComponent } from './components/order/order.component';
+import{PortfolioComponent} from './components/portfolio/portfolio.component';
 
 const routes: Routes = [
   // { path: '**', redirectTo: 'login' }, // If no route matches, redirect to login//Do not include this as this would not redirect to home page even after successfull log in
   { path: 'login', component: LoginComponent }, // Route for login page
   { path: 'home', component: HomeComponent, canActivate: [adminGuard]}, // Protect this route with the adminGuard,
-  { path: 'merchandise', component: MerchandiseComponent, canActivate: [adminGuard]},
-  { path: 'order', component: OrderComponent, canActivate: [adminGuard] },
+  { path: 'merchandise', component: MerchandiseComponent},
+  { path: 'order', component: OrderComponent},
+  { path: 'portfolio', component: PortfolioComponent},
 
   
 ];
