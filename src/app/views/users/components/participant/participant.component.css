@@ -1,0 +1,173 @@
+nav {
+    margin-bottom: 4rem;
+}
+
+.custom-card {
+    background-color: rgb(244, 244, 244);
+    margin: 20px auto; /* Center the card horizontally */
+    width: 80%; /* Set the card width to 80% of the screen's width */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    padding-top: 10%; /* 16:4 aspect ratio (4/16 = 0.25) */
+    position: relative;
+  }
+  
+  .card-img-top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+  
+  .square-image-container {
+    width: 100%;
+    padding-top: 100%; /* 1:1 aspect ratio for square */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .square-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+  
+  .text-section p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  
+  .text-section i {
+    margin-right: 10px; /* Space between icon and text */
+    margin-left: 10px;
+  }
+  
+  .right-section {
+    margin-bottom: 0px;
+  }
+
+  .col-md-8 {
+    margin-top: 14px;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+  
+  .btn-warning {
+    background-color: rgb(255, 186, 0);
+    color: black;
+    border: none;
+    margin-top: 40px;
+    border-radius: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bold;
+  }
+  
+  .custom-dropdown {
+    appearance: none; /* Remove default browser styling */
+    -webkit-appearance: none; /* For Safari */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 4 5%22%3E%3Cpath fill%3D%22%23000000%22 d%3D%22M0 0L4 0L2 3z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 30px; /* Add space for the arrow */
+  }
+  
+  .custom-dropdown:focus {
+    outline: none;
+    border: 2px solid #ffba00; /* Highlight border on focus */
+  }
+  
+ /* Backdrop */
+.popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.8); /* Grey background */
+    z-index: 999; /* Lower than the popup card */
+  }
+  
+  /* Popup Card */
+  .popup-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000; /* Above backdrop */
+  }
+  
+  /* Success Icon */
+  .success-icon .circle {
+    width: 80px;
+    height: 80px;
+    background-color: #4CAF50; /* Green background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+  }
+  
+  .success-icon .circle svg {
+    fill: white; /* White tick symbol */
+  }
+  
+  .success-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+
+  /* Ensure the link and text are on the same line */
+.top-left-link {
+    position: absolute;
+    top: -20px; /* Move it above the card */
+    left: 10px; /* Align with the card's left edge */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px;
+    color: black; /* Set link color to black */
+    font-weight: bold;
+    z-index: 10; /* Ensure it appears above other elements */
+    display: inline-block; /* Ensure it stays on the same line */
+  }
+  
+  .top-left-link:hover {
+    color: black; /* Keep color black on hover */
+  }
+  
+  /* 'Registration' text */
+  .registration-text {
+    position: absolute;
+    top: -20px; /* Move it above the card */
+    left: 90px; /* Align with the card's left edge */
+    font-weight: normal; /* Make the 'Registration' part normal weight */
+    font-size: 14px;
+    color: black; /* Keep 'Registration' text black */
+    display: inline; /* Ensure it's inline */
+    margin-left: 5px; /* Adds a small space between the words */
+  }
+  
+  

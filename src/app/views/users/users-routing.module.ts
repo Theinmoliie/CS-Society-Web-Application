@@ -5,6 +5,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { MerchandiseComponent } from './components/merchandise/merchandise.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { ParticipantComponent } from './components/participant/participant.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'merchandise', component: MerchandiseComponent },
   { path: 'cart', component: CartComponent },
   { path: 'payment', component: PaymentComponent },
-
+  { path: 'participant', component: ParticipantComponent },
 
 ];
 
