@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-past-events',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './past-events.component.html',
   styleUrls: ['./past-events.component.css']
 })
