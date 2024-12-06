@@ -1,4 +1,10 @@
+/* width of the modal after user click on add to cart button */
 .custom-modal-width {
   width: 80%;  /* Adjust width as needed */
   max-width: 600px;  /* Max width to avoid overly large modals */
+}
+
+/* add bottom margin for navbar */
+nav{
+  margin-bottom: 4rem;
 }

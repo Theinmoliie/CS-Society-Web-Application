@@ -83,6 +83,23 @@ export class OrderService {
     return [];
   }
 
+  editOrder(updatedOrder: Order) {
+    let latestOrders = this.getOrder();
+
+    // Find the existing order and update its details
+    const orderToUpdate = latestOrders.find((order:Order) => order.id === updatedOrder.id);
+    if (orderToUpdate) {
+      orderToUpdate.amount = updatedOrder.amount;
+      orderToUpdate.userName = updatedOrder.userName;
+      orderToUpdate.email = updatedOrder.email;
+      orderToUpdate.contact = updatedOrder.contact;
+      orderToUpdate.orderedItem = updatedOrder.orderedItem; // Optional, if editing items
+    }
+
+    localStorage.setItem('orderList', JSON.stringify(latestOrders));
+  }
+
+
   // Deletes a specific order by its id
   deleteOrder(id: string) {
     let latestOrder = this.getOrder();

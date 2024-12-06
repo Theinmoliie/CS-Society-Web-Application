@@ -6,6 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { CardCartTableComponent } from './components/card-cart-table/card-cart-table.component';
 import { ModalAddMerchandiseComponent } from "./components/modal-add-merchandise/modal-add-merchandise.component";
 import { ModalConfirmationComponent } from "./components/modal-confirmation/modal-confirmation.component";
+import { ModalEditOrderComponent } from './components/modal-edit-order/modal-edit-order.component';
 
 @NgModule({
     declarations: [
@@ -13,7 +14,8 @@ import { ModalConfirmationComponent } from "./components/modal-confirmation/moda
         ModalMerchandiseComponent,
         CardCartTableComponent,
         ModalAddMerchandiseComponent,
-        ModalConfirmationComponent
+        ModalConfirmationComponent,
+        ModalEditOrderComponent
     ],
     imports: [
         CommonModule,
@@ -24,7 +26,8 @@ import { ModalConfirmationComponent } from "./components/modal-confirmation/moda
         ModalMerchandiseComponent,
         CardCartTableComponent,
         ModalAddMerchandiseComponent,
-        ModalConfirmationComponent
+        ModalConfirmationComponent,
+        ModalEditOrderComponent
     ]
   })
   export class SharedModule { }
