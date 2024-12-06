@@ -107,57 +107,59 @@
     </div>
 </div>
 
-<!-- Slideshow Section -->
-<div class="slideshow-container">
-    <div class="slideshow">
-        <div class="slides" id="slides">
-            <div class="slide">
-            	<h1>Log Off Night 2024</h1>
-                <p>The epic celebration for final-year Computer Science students!</p>    
-		<img src="../assets/event1.png" alt="Log Off Night 2024">
-            </div>
-            <div class="slide">
-		<h1>Pixel 2024</h1>
-                <p>Explore and innovate beyond horizons with CS students.</p>
-    		<img src="../assets/event2.png" alt="Pixel 2024">
-            </div>
-            <div class="slide">
-                <h1>Annual General Meeting 2024</h1>
-                <p>Celebrate achievements and elect new executives.</p>
-                <img src="../assets/event3.png" alt="Annual General Meeting 2024">
-            </div>
-        </div>
-        <!-- Navigation Arrows -->
-        <div class="navigation">
-            <button class="arrow" id="prev">&larr;</button>
-            <button class="arrow" id="next">&rarr;</button>
-        </div>
+<!-- Slideshow Section using Bootstrap Carousel -->
+<div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="../assets/event1.png" class="d-block w-30" alt="Log Off Night 2024">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+        <h5>Log Off Night 2024</h5>
+        <p>Celebrating the achievements of final-year Computer Science students!</p>
+      </div>
     </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="../assets/event2.png" class="d-block w-30" alt="Pixel 2024">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+        <h5>Pixel 2024</h5>
+        <p>Explore and innovate with CS students beyond horizons.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="../assets/event3.png" class="d-block w-30" alt="Annual General Meeting">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+        <h5>Annual General Meeting 2024</h5>
+        <p>Celebrate achievements and elect new leadership.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Previous Button -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <!-- Next Button -->
+  <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
 </div>
 
-<script>
-    // Slideshow functionality
-    const slides = document.getElementById('slides');
-    const prev = document.getElementById('prev');
-    const next = document.getElementById('next');
-    const slideCount = document.querySelectorAll('.slide').length;
-    let index = 0;
-
-    // Auto-Slide every 5 seconds
-    setInterval(() => {
-        moveSlide(1);
-    }, 5000);
-
-    // Manual navigation
-    prev.addEventListener('click', () => moveSlide(-1));
-    next.addEventListener('click', () => moveSlide(1));
-
-    function moveSlide(direction) {
-        index += direction;
-        if (index < 0) index = slideCount - 1;
-        if (index >= slideCount) index = 0;
-        slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-</script>
 </body>
 </html>
