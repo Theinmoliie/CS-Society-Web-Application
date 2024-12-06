@@ -8,3 +8,8 @@
   font-size: 0.8rem;
   padding-left: 1.2rem;
 }
+
+/* add bottom margin for navbar */
+nav{
+  margin-bottom: 3rem;
+}

@@ -1,3 +1,38 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #6a0dad; padding: 16px 0;">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand text-white" href="#" style="font-size: 18px;">Navbar</a> -->
+    <a href=""><img src="../assets/cs_logo.png" alt="cs_logo" style="width: 70px; height: 70px; margin-right: 40px; margin-left: 20px;"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 20px;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#" style="font-size: 20px; margin-right: 10px;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" [routerLink]="['/users/portfolio']"  style="font-size: 20px; margin-right: 10px;">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" [routerLink]="['/users/merchandise']" style="font-size: 20px; margin-right: 10px;">Merchandise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" href="#" style="font-size: 20px; margin-right: 10px;">Sponsorship</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; padding: 0px 10px 0 10px; border-radius: 50px;">
+        <button class="btn btn-outline-light" type="submit" style="font-size: 20px; border-radius: 50px; margin-right: 50px; margin-left: 10px;">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
 <!-- Board members of CS Ssociety -->
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -217,7 +252,7 @@
     <div class="card-body">
       <h5 class="card-title">PIXEL 2024</h5>
       <br>
-      <h6><i class="fas fa-calendar-alt"></i> June 30 2023</h6>
+      <h6><i class="fas fa-calendar-alt"></i> June 30 2024</h6>
       <h6><i class="fas fa-map-marker-alt"></i> Dewan Utama Pelajar, USM</h6>
       <br>
       <p class="card-text">An annual flagship exhibition programme specially curated for final year computer science students.</p>
@@ -232,7 +267,7 @@
     <div class="card-body">
       <h5 class="card-title">Log Off Night 2024</h5>
       <br>
-      <h6><i class="fas fa-calendar-alt"></i> Jun 10 2023</h6>
+      <h6><i class="fas fa-calendar-alt"></i> Jun 10 2024</h6>
       <h6><i class="fas fa-map-marker-alt"></i> Bayview Hotel, Penang</h6>
       <br>
       <p class="card-text">An annual dinner to celebrate and appreciate final year computer science students' contributions.</p>

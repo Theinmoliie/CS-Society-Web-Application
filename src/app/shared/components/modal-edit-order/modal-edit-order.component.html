@@ -1,0 +1,56 @@
+<div class="modal-header">
+  <h5 class="modal-title">Edit Order</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+</div>
+
+<div class="modal-body">
+  <div class="mb-3">
+    <label for="userName" class="form-label">User Name</label>
+    <input
+      id="userName"
+      type="text"
+      [(ngModel)]="editedOrder.userName"
+      class="form-control"
+      placeholder="Enter user name"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email Address</label>
+    <input
+      id="email"
+      type="email"
+      [(ngModel)]="editedOrder.email"
+      class="form-control"
+      placeholder="Enter email address"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="contact" class="form-label">Contact Number</label>
+    <input
+      id="contact"
+      type="text"
+      [(ngModel)]="editedOrder.contact"
+      class="form-control"
+      placeholder="Enter contact number"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="amount" class="form-label">Amount</label>
+    <input
+      id="amount"
+      type="number"
+      [(ngModel)]="editedOrder.amount"
+      class="form-control"
+      placeholder="Enter amount"
+      min="0"
+    />
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="saveOrderChanges()">Save Changes</button>
+</div>

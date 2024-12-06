@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { OrderService } from '../../services/order.service';
 import { Order } from '../../../../shared/models/order-model';
 import { ModalConfirmationComponent } from '../../../../shared/components/modal-confirmation/modal-confirmation.component';
+import { ModalEditOrderComponent } from '../../../../shared/components/modal-edit-order/modal-edit-order.component';
+
 
 @Component({
   selector: 'app-order',
@@ -31,6 +33,24 @@ export class OrderComponent implements OnInit{
   refreshOrderList() {
     this.orderList = this.orderService.getOrder();
   }
+
+  editOrder(order: Order) {
+    // Open the edit modal and pass the selected order
+    this.bsModalRef = this.modalService.show(ModalEditOrderComponent, {
+      initialState: {
+        selectedOrder: order
+      },
+      class: 'custom-modal-width'
+    });
+
+    // Subscribe to the updateOrder event to save the edited order
+    this.bsModalRef.content.updateOrder.subscribe((updatedOrder: Order) => {
+      this.orderService.editOrder(updatedOrder); // Update the order in localStorage
+      this.toast.success('Order updated successfully!');
+      this.refreshOrderList(); // Refresh the order list
+    });
+  }
+
 
   // Opens a confirmation modal to delete an order
   deleteOrder(order: Order) {
