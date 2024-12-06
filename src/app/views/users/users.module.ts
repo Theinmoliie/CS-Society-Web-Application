@@ -8,23 +8,25 @@ import { MerchandiseComponent } from './components/merchandise/merchandise.compo
 import { CartComponent } from './components/cart/cart.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PastEventsComponent } from './components/past-events/past-events.component';
+import { RouterModule } from '@angular/router';
+import { ParticipantComponent } from './components/participant/participant.component';
 
 @NgModule({
   declarations: [
     MerchandiseComponent,
     CartComponent,
     PaymentComponent,
+    ParticipantComponent
     
-
   ],
   imports: [
     CommonModule,
     UsersRoutingModule,
-    HomeComponent,
-    PortfolioComponent,
     SharedModule,
     PastEventsComponent,
-    
+    RouterModule,
+    HomeComponent,
+    PortfolioComponent,
 
   ]
 })

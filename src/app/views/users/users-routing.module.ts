@@ -6,6 +6,7 @@ import { MerchandiseComponent } from './components/merchandise/merchandise.compo
 import { CartComponent } from './components/cart/cart.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { PastEventsComponent } from './components/past-events/past-events.component';
+import { ParticipantComponent } from './components/participant/participant.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'pastevents', component: PastEventsComponent },
+  { path: 'participation', component: ParticipantComponent }
 
 
 ];
