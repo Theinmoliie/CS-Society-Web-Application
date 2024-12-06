@@ -7,12 +7,14 @@ import { adminGuard } from './admin.guard';  // Import the adminGuard
 import { SharedModule } from '../../shared/shared.module';
 import { MerchandiseComponent } from './components/merchandise/merchandise.component';
 import { OrderComponent } from './components/order/order.component';
-
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @NgModule({
   declarations: [
     MerchandiseComponent,
     OrderComponent,
+    PortfolioComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { OrderComponent } from './components/order/order.component';
     LoginComponent,
     HomeComponent,
     SharedModule,
-    DecimalPipe
+    DecimalPipe,
+    FormsModule
   ],
 
 })

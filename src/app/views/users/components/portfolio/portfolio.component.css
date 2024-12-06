@@ -1,3 +1,8 @@
+  nav{
+    margin-bottom: 4rem;
+  }
+  
+  
   /* Style the carousel container to take the full header height */
 .carousel {
     width: 100%; /* Full width */

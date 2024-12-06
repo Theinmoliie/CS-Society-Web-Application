@@ -1,0 +1,153 @@
+<div class="container my-5">
+    <h1>Portfolio Management</h1>
+    <hr>
+
+    <!-- Bootstrap Tabs -->
+    <ul class="nav nav-tabs" id="portfolioTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="carouselTab" data-bs-toggle="tab" href="#carousel" role="tab" aria-controls="carousel" aria-selected="true">Manage Carousel</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="achievementsTab" data-bs-toggle="tab" href="#achievements" role="tab" aria-controls="achievements" aria-selected="false">Manage Achievements</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="pastEventsTab" data-bs-toggle="tab" href="#pastEvents" role="tab" aria-controls="pastEvents" aria-selected="false">Manage Past Events</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="portfolioTabsContent">
+        <!-- Carousel Section Tab -->
+        <div class="tab-pane fade show active" id="carousel" role="tabpanel" aria-labelledby="carouselTab">
+            <h2>Manage Carousel</h2>
+            <button class="btn btn-primary mb-3" (click)="toggleAddCarousel()">Add Image</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let image of carouselImages; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td><img [src]="image.src" alt="Carousel Image" class="img-thumbnail" style="width: 100px; height: 50px;"></td>
+                        <td>
+                            <button class="btn btn-primary btn-sm ms-2" (click)="editCarouselImage(i)">Edit</button>
+                            <button class="btn btn-danger btn-sm ms-2" (click)="deleteCarouselImage(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Achievements Section Tab -->
+        <div class="tab-pane fade" id="achievements" role="tabpanel" aria-labelledby="achievementsTab">
+            <h2>Manage Achievements</h2>
+            <button class="btn btn-primary mb-3" (click)="toggleAddAchievement()">Add Achievement</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let achievement of achievements; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ achievement.title }}</td>
+                        <td>{{ achievement.description }}</td>
+                        <td>
+                            <img [src]="achievement.image" alt="Achievement Image" class="img-thumbnail" style="width: 100px; height: 50px;">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-sm ms-2" (click)="editAchievement(i)">Edit</button>
+                            <button class="btn btn-danger btn-sm ms-2" (click)="deleteAchievement(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Past Events Section Tab -->
+        <div class="tab-pane fade" id="pastEvents" role="tabpanel" aria-labelledby="pastEventsTab">
+            <h2>Manage Past Events</h2>
+            <button class="btn btn-primary mb-3" (click)="toggleAddEvent()">Add Event</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of pastEvents; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ event.title }}</td>
+                        <td>{{ event.date }}</td>
+                        <td>{{ event.location }}</td>
+                        <td>
+                            <img [src]="event.image" alt="Achievement Image" class="img-thumbnail" style="width: 100px; height: 50px;">
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-sm ms-2" (click)="editEvent(i)">Edit</button>
+                            <button class="btn btn-danger btn-sm ms-2" (click)="deleteEvent(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit -->
+   <!-- Modal for Add/Edit -->
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel">{{ formTitle }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="submitForm()">
+                    <div class="mb-3" *ngIf="isAddingCarousel || isAddingEvent || isAddingAchievement">
+                        <label class="form-label">Image URL</label>
+                        <input type="file" class="form-control" (change)="onFileSelect($event)" required>
+                    </div>
+
+                    <!-- Only for achievements and events, show these fields -->
+                    <div class="mb-3" *ngIf="isAddingAchievement || isAddingEvent">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control" [(ngModel)]="editingItem.title" name="title" required>
+                    </div>
+
+                    <div class="mb-3" *ngIf="isAddingAchievement || isAddingEvent">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" [(ngModel)]="editingItem.description" name="description" required></textarea>
+                    </div>
+
+                    <div class="mb-3" *ngIf="isAddingEvent">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-control" [(ngModel)]="editingItem.date" name="date" required>
+                    </div>
+
+                    <div class="mb-3" *ngIf="isAddingEvent">
+                        <label class="form-label">Location</label>
+                        <input type="text" class="form-control" [(ngModel)]="editingItem.location" name="location" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">{{ formButtonText }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
