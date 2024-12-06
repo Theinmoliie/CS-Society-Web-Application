@@ -12,6 +12,8 @@ import { SponsorslistComponent } from './components/sponsorslist/sponsorslist.co
 import { SponsorsregisterComponent } from './components/sponsorsregister/sponsorsregister.component';
 import { SponsorcategoryComponent } from './components/sponsorcategory/sponsorcategory.component';
 import { ParticipantComponent } from './components/participant/participant.component';
+import { SponsorstermsComponent } from './components/sponsorsterms/sponsorsterms.component';
+import { SponsorsubmissionComponent } from './components/sponsorsubmission/sponsorsubmission.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: 'sponsorslist' , component: SponsorslistComponent},
   { path: 'sponsorsregister' , component: SponsorsregisterComponent},
   { path: 'sponsorscategory' , component: SponsorcategoryComponent},
-  { path: 'participation', component: ParticipantComponent }
+  { path: 'participation', component: ParticipantComponent },
+  { path: 'sponsorsterms' , component:SponsorstermsComponent},
+  { path: 'sponsorsubmission' , component: SponsorsubmissionComponent}
  
 ];
 
