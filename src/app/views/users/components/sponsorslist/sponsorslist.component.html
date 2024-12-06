@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #6a0dad; padding: 16px 0;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand text-white" href="#" style="font-size: 18px;">Navbar</a> -->
+      <a href=""><img src="../assets/cs_logo.png" alt="cs_logo" style="width: 70px; height: 70px; margin-right: 40px; margin-left: 20px;"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 20px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#" style="font-size: 20px; margin-right: 10px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" [routerLink]="['/users/portfolio']"  style="font-size: 20px; margin-right: 10px;">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/merchandise']" style="font-size: 20px; margin-right: 10px;">Merchandise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" [routerLink]="['/users/sponsorshiphome']" style="font-size: 20px; margin-right: 10px;">Sponsorship</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; padding: 0px 10px 0 10px; border-radius: 50px;">
+          <button class="btn btn-outline-light" type="submit" style="font-size: 20px; border-radius: 50px; margin-right: 50px; margin-left: 10px;">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Sponsors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sponsorslist-title {
+              text-align: center;
+              font-size: 2rem;
+              font-weight: bold;
+              color: #000;
+              margin-bottom: 20px;
+        
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .logos img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .big-image {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="sponsorslist-title" >Our Sponsors</h1>
+        <p>We’re truly grateful for all our sponsors and their invaluable support in making the Empower CS Sponsorship Program a success.</p>
+        <div class="logos">
+            <img src="assets/sponsorlist1.png" class="big-image">
+            <img src="assets/sponsorlist2.png" class="big-image">
+        </div>
+    </div>
+</body>
+
