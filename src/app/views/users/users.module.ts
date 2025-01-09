@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -30,13 +31,14 @@ import { ParticipantComponent } from './components/participant/participant.compo
     SponsorcategoryComponent,
     SponsorstermsComponent,
     SponsorsubmissionComponent,
-  
+
     ParticipantComponent
-    
+
   ],
   imports: [
     CommonModule,
     UsersRoutingModule,
+    ReactiveFormsModule, // Add ReactiveFormsModule
     SharedModule,
     PastEventsComponent,
     RouterModule,
