@@ -27,20 +27,27 @@ export class ParticipantComponent implements OnInit {
   ngOnInit(): void {}
 
   // Input sanitization
-  sanitizeInput(input: string): string {
+  sanitizeInput(input: string, fieldName?: string): string {
+    if (fieldName === 'email') {
+      return input
+        .trim()
+        .replace(/[^a-zA-Z0-9@._-]/g, '') // Allow characters specific to email addresses
+        .replace(/\s+/g, ' ');
+    }
     return input
-      .trim() // Removes leading and trailing spaces.
-      .replace(/[^a-zA-Z0-9\s'-/.]/g, '') // Removes any special characters except alphanumeric, spaces and some special character.
-      .replace(/\s+/g, ' ') // Collapses multiple spaces into a single space.
+      .trim()
+      .replace(/[^a-zA-Z0-9\s'-/.]/g, '')
+      .replace(/\s+/g, ' ');
   }
+  
 
   // Method to sanitize individual form fields
   sanitizeField(fieldName: string): void {
     const control = this.participantForm.get(fieldName);
     if (control && control.value) {
-      control.setValue(this.sanitizeInput(control.value));
+      control.setValue(this.sanitizeInput(control.value, fieldName));
     }
-  }
+  }  
 
   // Method to sanitize all form inputs
   sanitizeFormInputs(): void {
