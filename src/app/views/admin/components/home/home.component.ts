@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { LogoutService } from '../../../../shared/services/logout.service';
 
 @Component({
   standalone:true,
@@ -11,6 +12,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor(private logoutservice: LogoutService) {}
+
 
   slides = [
     {
@@ -46,6 +49,10 @@ export class HomeComponent {
   saveChanges() {
     console.log('Updated Event Details:', this.eventDetails);
     // Add logic to save or update the event details
+  }
+
+  logout(): void {
+    this.logoutservice.logout();
   }
 }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as bootstrap from 'bootstrap';
+import { LogoutService } from '../../../../shared/services/logout.service';
 
 @Component({
   selector: 'app-portfolio-admin',
@@ -7,6 +8,7 @@ import * as bootstrap from 'bootstrap';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent {
+  constructor(private logoutservice: LogoutService) {}
 
   // Flags for managing form visibility
   isAddingCarousel = false;
@@ -166,5 +168,9 @@ export class PortfolioComponent {
     this.editingItem = {};
     const modal = new bootstrap.Modal(document.getElementById('formModal'));
     modal.hide();
+  }
+
+  logout(): void {
+    this.logoutservice.logout();
   }
 }

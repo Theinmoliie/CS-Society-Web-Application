@@ -5,6 +5,7 @@ import { OrderService } from '../../services/order.service';
 import { Order } from '../../../../shared/models/order-model';
 import { ModalConfirmationComponent } from '../../../../shared/components/modal-confirmation/modal-confirmation.component';
 import { ModalEditOrderComponent } from '../../../../shared/components/modal-edit-order/modal-edit-order.component';
+import { LogoutService } from '../../../../shared/services/logout.service';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class OrderComponent implements OnInit{
 
   constructor(private orderService: OrderService,
               private modalService: BsModalService,
-              private toast: ToastrService) { }
+              private toast: ToastrService,
+              private logoutservice: LogoutService) { }
 
   // Fetches the order list by calling refreshOrderList()
   ngOnInit(): void {
@@ -70,5 +72,8 @@ export class OrderComponent implements OnInit{
       this.refreshOrderList();
     });
   }
-
+  
+  logout(): void {
+    this.logoutservice.logout();
+  }
 }

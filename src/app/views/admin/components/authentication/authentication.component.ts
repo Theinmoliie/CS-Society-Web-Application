@@ -38,12 +38,4 @@ export class AuthenticationComponent {
     }
   }
   
-
-  logout(): void {
-    auth.signOut().then(() => {
-      console.log('Logged out');
-    }).catch(error => {
-      console.error('Logout failed:', error);
-    });
-  }
 }
