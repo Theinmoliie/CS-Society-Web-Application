@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogoutService } from '../../../../shared/services/logout.service';
 
 @Component({
   selector: 'app-participants',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParticipantsComponent implements OnInit {
   participantsList: any[] = [];
 
-  constructor() { }
+  constructor(private logoutservice: LogoutService) { }
 
   ngOnInit(): void {
     // Initialize the participantsList with some data or fetch from a service
@@ -81,5 +82,9 @@ export class ParticipantsComponent implements OnInit {
     if (index > -1) {
       this.participantsList.splice(index, 1);
     }
+  }
+
+  logout(): void {
+    this.logoutservice.logout();
   }
 }

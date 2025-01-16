@@ -5,6 +5,7 @@ import { MerchandiseService } from '../../services/merchandise.service';
 import { Merchandise } from '../../../../shared/models/merchandise-model';
 import { ModalAddMerchandiseComponent } from '../../../../shared/components/modal-add-merchandise/modal-add-merchandise.component';
 import { ModalConfirmationComponent } from '../../../../shared/components/modal-confirmation/modal-confirmation.component';
+import { LogoutService } from '../../../../shared/services/logout.service';
 
 @Component({
   selector: 'app-merchandise',
@@ -24,7 +25,8 @@ export class MerchandiseComponent {
 // ToastrService: For showing toast messages
   constructor(private merchandiseService: MerchandiseService,
               private modalService: BsModalService,
-              private toast: ToastrService) { }
+              private toast: ToastrService,
+              private logoutservice: LogoutService) { }
 
   ngOnInit(): void {
     this.refreshMerchandiseItem();
@@ -88,4 +90,7 @@ export class MerchandiseComponent {
     });
   }
 
+  logout(): void {
+    this.logoutservice.logout();
+  }
 }
