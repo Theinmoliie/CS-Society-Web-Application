@@ -19,7 +19,7 @@ import { SponsorsubmissionComponent } from './components/sponsorsubmission/spons
 import { RouterModule } from '@angular/router';
 import { ParticipantComponent } from './components/participant/participant.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+//import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -36,8 +36,8 @@ import { FormsModule } from '@angular/forms';
     SponsorsubmissionComponent,
     ParticipantComponent,
     LoginComponent,
-    SignupComponent,
-      
+    //SignupComponent,
+
 
   ],
   imports: [

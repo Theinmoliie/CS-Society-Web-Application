@@ -7,7 +7,7 @@ import { Authentication} from '../../../../shared/services/authentication.servic
   templateUrl: './participant.component.html',
   styleUrls: ['./participant.component.css']
 })
-export class ParticipantComponent implements OnInit {  
+export class ParticipantComponent implements OnInit {
 
   participantForm: FormGroup;
   showPopup = false;
@@ -53,14 +53,24 @@ export class ParticipantComponent implements OnInit {
 
   // Input sanitization
   sanitizeInput(input: string, fieldName?: string): string {
+
+    // Common sanitization to remove malicious scripts and HTML tags
+  const removeHTMLTags = (str: string): string => {
+    return str.replace(/<\/?[^>]+(>|$)/g, ''); // Remove HTML tags
+  };
+
+  input = removeHTMLTags(input); // Strip HTML tags first
+
     if (fieldName === 'email') {
       return input
         .trim()
+        .replace(/[()]/g, '') // Remove parentheses
         .replace(/[^a-zA-Z0-9@._-]/g, '') // Allow characters specific to email addresses
         .replace(/\s+/g, ' ');
     }
     return input
       .trim()
+      .replace(/[()]/g, '') // Remove parentheses
       .replace(/[^a-zA-Z0-9\s'-/.]/g, '')
       .replace(/\s+/g, ' ');
   }
@@ -116,5 +126,5 @@ export class ParticipantComponent implements OnInit {
   logout(): void {
     this.authservice.logout();
   }
-  
+
 }

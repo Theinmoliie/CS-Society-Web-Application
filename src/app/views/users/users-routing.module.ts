@@ -15,12 +15,12 @@ import { ParticipantComponent } from './components/participant/participant.compo
 import { SponsorstermsComponent } from './components/sponsorsterms/sponsorsterms.component';
 import { SponsorsubmissionComponent } from './components/sponsorsubmission/sponsorsubmission.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+//import { SignupComponent } from './components/signup/signup.component';
 import { userGuard } from './components/user.guard';
 
 const routes: Routes = [
   { path: 'loginuser', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  //{ path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent, canActivate: [userGuard]}, // Protect this route with the adminGuard,
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'merchandise', component: MerchandiseComponent },
