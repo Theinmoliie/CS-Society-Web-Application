@@ -9,6 +9,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ParticipantComponent implements OnInit {
   participantForm: FormGroup;
   showPopup = false;
+  rateLimitError = false;
+  maxRequests = 1; // Maximum number of requests allowed
+  timeWindow = 420000; // Time window in milliseconds (e.g., 7 minute)
+  requestTimestamps: number[] = [];
+
+  // Method to check and enforce rate limiting
+  enforceRateLimit(): boolean {
+    const now = Date.now();
+
+    // Filter out timestamps older than the time window
+    this.requestTimestamps = this.requestTimestamps.filter(
+      (timestamp) => now - timestamp < this.timeWindow
+    );
+
+    if (this.requestTimestamps.length >= this.maxRequests) {
+      return false; // Rate limit exceeded
+    }
+
+    this.requestTimestamps.push(now);
+    return true; // Allow request
+  }
 
   // Input validation
   // Injects FormBuilder service to manage form controls
@@ -39,7 +60,7 @@ export class ParticipantComponent implements OnInit {
       .replace(/[^a-zA-Z0-9\s'-/.]/g, '')
       .replace(/\s+/g, ' ');
   }
-  
+
 
   // Method to sanitize individual form fields
   sanitizeField(fieldName: string): void {
@@ -47,7 +68,7 @@ export class ParticipantComponent implements OnInit {
     if (control && control.value) {
       control.setValue(this.sanitizeInput(control.value, fieldName));
     }
-  }  
+  }
 
   // Method to sanitize all form inputs
   sanitizeFormInputs(): void {
@@ -61,6 +82,14 @@ export class ParticipantComponent implements OnInit {
 
   // Method to submit the form
   onSubmit(): void {
+    if (!this.enforceRateLimit()) {
+      this.rateLimitError = true;
+      setTimeout(() => {
+        this.rateLimitError = false; // Clear error after a short duration
+      }, 3000); // Display error for 3 seconds
+      return;
+    }
+
     if (this.participantForm.valid) {
       // Sanitize all inputs before submission
       this.sanitizeFormInputs();
