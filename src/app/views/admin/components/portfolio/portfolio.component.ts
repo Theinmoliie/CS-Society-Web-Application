@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as bootstrap from 'bootstrap';
-import { LogoutService } from '../../../../shared/services/logout.service';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-portfolio-admin',
@@ -8,7 +8,7 @@ import { LogoutService } from '../../../../shared/services/logout.service';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent {
-  constructor(private logoutservice: LogoutService) {}
+  constructor(private authservice: Authentication) { }
 
   // Flags for managing form visibility
   isAddingCarousel = false;
@@ -171,6 +171,6 @@ export class PortfolioComponent {
   }
 
   logout(): void {
-    this.logoutservice.logout();
+    this.authservice.logout();
   }
 }

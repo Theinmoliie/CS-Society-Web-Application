@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LogoutService } from '../../../../shared/services/logout.service';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-participants',
@@ -9,7 +9,7 @@ import { LogoutService } from '../../../../shared/services/logout.service';
 export class ParticipantsComponent implements OnInit {
   participantsList: any[] = [];
 
-  constructor(private logoutservice: LogoutService) { }
+  constructor(private authservice: Authentication) { }
 
   ngOnInit(): void {
     // Initialize the participantsList with some data or fetch from a service
@@ -85,6 +85,6 @@ export class ParticipantsComponent implements OnInit {
   }
 
   logout(): void {
-    this.logoutservice.logout();
+    this.authservice.logout();
   }
 }

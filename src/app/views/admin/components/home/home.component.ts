@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
-import { LogoutService } from '../../../../shared/services/logout.service';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   standalone:true,
@@ -12,7 +12,7 @@ import { LogoutService } from '../../../../shared/services/logout.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private logoutservice: LogoutService) {}
+  constructor(private authservice: Authentication) {}
 
 
   slides = [
@@ -52,7 +52,7 @@ export class HomeComponent {
   }
 
   logout(): void {
-    this.logoutservice.logout();
+    this.authservice.logout();
   }
 }
 

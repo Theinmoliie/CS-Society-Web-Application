@@ -14,9 +14,14 @@ import { SponsorcategoryComponent } from './components/sponsorcategory/sponsorca
 import { ParticipantComponent } from './components/participant/participant.component';
 import { SponsorstermsComponent } from './components/sponsorsterms/sponsorsterms.component';
 import { SponsorsubmissionComponent } from './components/sponsorsubmission/sponsorsubmission.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { userGuard } from './components/user.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'loginuser', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'home', component: HomeComponent, canActivate: [userGuard]}, // Protect this route with the adminGuard,
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'merchandise', component: MerchandiseComponent },
   { path: 'cart', component: CartComponent },
@@ -30,7 +35,6 @@ const routes: Routes = [
   { path: 'participation', component: ParticipantComponent },
   { path: 'sponsorsterms' , component:SponsorstermsComponent},
   { path: 'sponsorsubmission' , component: SponsorsubmissionComponent}
- 
 ];
 
 @NgModule({

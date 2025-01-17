@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-past-events',
@@ -13,7 +14,8 @@ import { RouterLink } from '@angular/router';
 export class PastEventsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private authservice: Authentication
   ) {}
 
   ngOnInit(): void {
@@ -23,5 +25,9 @@ export class PastEventsComponent implements OnInit {
         this.viewportScroller.scrollToAnchor(fragment);
       }
     });
+  }
+
+  logout(): void {
+    this.authservice.logout();
   }
 }

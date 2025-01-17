@@ -15,7 +15,8 @@ export class CartComponent {
   cartList: Cart[];
 
   constructor(private cartService: CartService,
-          private router: Router) { }
+          private router: Router
+          ) { }
 
   // getCart() method of the CartService to fetch the cart data
   // assigning the fetched data to the cartList
@@ -34,4 +35,5 @@ export class CartComponent {
   updateCartList(data: any) {
     this.cartList = data;
   }
+
 }

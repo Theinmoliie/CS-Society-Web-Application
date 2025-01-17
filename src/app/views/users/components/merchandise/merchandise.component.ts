@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ModalMerchandiseComponent } from '../../../../shared/components/modal-merchandise/modal-merchandise.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-merchandise',
@@ -27,7 +28,8 @@ export class MerchandiseComponent implements OnInit{
   constructor(private merchandiseService: MerchandiseService,
               private cartService: CartService,
               private modalService: BsModalService,
-              private toast: ToastrService) { }
+              private toast: ToastrService,
+              private authservice: Authentication) { }
 
   ngOnInit(): void {
     // Fetches merchandise data using the MerchandiseService
@@ -76,4 +78,9 @@ export class MerchandiseComponent implements OnInit{
 
     }
   }
+
+  logout(): void {
+    this.authservice.logout();
+  }
+
 }

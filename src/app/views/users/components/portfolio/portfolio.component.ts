@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,8 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./portfolio.component.css']  // Corrected to styleUrls (plural)
 })
 export class PortfolioComponent implements AfterViewInit {
-  
 
+    constructor(private authservice: Authentication) {} 
+  
   ngAfterViewInit(): void {
     // Initialize the carousel after the view has been initialized
     const carouselElement = document.getElementById('carouselExampleDark');
@@ -23,6 +25,10 @@ export class PortfolioComponent implements AfterViewInit {
         touch: true,  // Enable touch/swiping on mobile devices
       });
     }
+  }
+
+  logout(): void {
+    this.authservice.logout();
   }
 
 }

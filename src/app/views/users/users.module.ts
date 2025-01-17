@@ -18,6 +18,9 @@ import { SponsorstermsComponent } from './components/sponsorsterms/sponsorsterms
 import { SponsorsubmissionComponent } from './components/sponsorsubmission/sponsorsubmission.component';
 import { RouterModule } from '@angular/router';
 import { ParticipantComponent } from './components/participant/participant.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,10 @@ import { ParticipantComponent } from './components/participant/participant.compo
     SponsorcategoryComponent,
     SponsorstermsComponent,
     SponsorsubmissionComponent,
-
-    ParticipantComponent
+    ParticipantComponent,
+    LoginComponent,
+    SignupComponent,
+      
 
   ],
   imports: [
@@ -46,7 +51,7 @@ import { ParticipantComponent } from './components/participant/participant.compo
     PortfolioComponent,
     SharedModule,
     PastEventsComponent,
-
+    FormsModule
   ]
 })
 export class UsersModule { }

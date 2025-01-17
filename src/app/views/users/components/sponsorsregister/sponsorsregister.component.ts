@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-sponsorsregister',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './sponsorsregister.component.css'
 })
 export class SponsorsregisterComponent {
-
+  constructor(private authservice: Authentication) {} 
+  
+  logout(): void {
+    this.authservice.logout();
+  }
+  
 }

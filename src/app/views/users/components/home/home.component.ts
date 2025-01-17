@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   standalone:true,
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
-  constructor(private router: Router) {} 
+  constructor(private router: Router, private authservice: Authentication) {} 
   navigateToParticipation() {
     this.router.navigate(['users/participation']); // Navigate to the 'participation' route
   }
@@ -39,4 +40,8 @@ export class HomeComponent {
     this.currentIndex = (this.currentIndex + direction + this.slides.length) % this.slides.length;
   }
 
+  logout(): void {
+    this.authservice.logout();
+  }
+  
 }

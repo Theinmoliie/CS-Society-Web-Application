@@ -1,0 +1,29 @@
+<section class="vh-100">
+    <div class="login-container">
+        <div class="col-12 text-center mb-4">
+        <img src="assets/cs_logo.png" class="img-fluid logo" alt="Logo">
+        </div>
+    
+        <h2>User Signup</h2>
+        <form (ngSubmit)="signUp()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required />
+            </div>
+            <div class="form-group button-container">
+                <button type="submit" class="btn btn-primary">Signup</button>
+            </div>
+            
+            <div class="mt-3">
+                <a [routerLink]="['/users/loginuser']" class="btn btn-link">Already have an account?Login</a>
+            </div>
+         </form>
+  </div>
+</section> 
+
+
+

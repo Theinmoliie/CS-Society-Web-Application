@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-sponsorshiphome',
@@ -8,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './sponsorshiphome.component.css'
 })
 export class SponsorshiphomeComponent {
+constructor(private authservice: Authentication) {} 
 
+    logout(): void {
+      this.authservice.logout();
+    }
 }

@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-participant',
   templateUrl: './participant.component.html',
   styleUrls: ['./participant.component.css']
 })
-export class ParticipantComponent implements OnInit {
+export class ParticipantComponent implements OnInit {  
+
   participantForm: FormGroup;
   showPopup = false;
 
   // Input validation
   // Injects FormBuilder service to manage form controls
   // Form group with specific form controls and validation rules
-  constructor(private fb: FormBuilder) {
+
+  constructor(private fb: FormBuilder, private authservice: Authentication) {
+
     this.participantForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s'-/.]*$/)]],
       matricNumber: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
@@ -79,4 +83,9 @@ export class ParticipantComponent implements OnInit {
       this.participantForm.markAllAsTouched();
     }
   }
+
+  logout(): void {
+    this.authservice.logout();
+  }
+  
 }
