@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { LogoutService } from '../../../../shared/services/logout.service';
+import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-view-event-details',
@@ -17,7 +17,7 @@ export class ViewEventDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,  // To navigate back
     private firestore: AngularFirestore, // Firestore service
-    private logoutservice: LogoutService
+    private authservice: Authentication
   ) {}
 
   ngOnInit(): void {
@@ -54,6 +54,6 @@ export class ViewEventDetailsComponent implements OnInit {
   }
 
   logout(): void {
-    this.logoutservice.logout();
+    this.authservice.logout();
   }
 }
