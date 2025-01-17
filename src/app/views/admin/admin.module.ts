@@ -9,7 +9,8 @@ import { OrderComponent } from './components/order/order.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule } from '@angular/forms';
 import { ParticipantsComponent } from './components/participants/participants.component';
-import { AuthenticationComponent } from './components/authentication/authentication.component'; // Import FormsModule
+import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { ViewEventDetailsComponent } from './components/view-event-details/view-event-details.component';// Import FormsModule
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     PortfolioComponent,
     ParticipantsComponent,
     AuthenticationComponent,
+    ViewEventDetailsComponent,
   ],
   imports: [
     CommonModule,

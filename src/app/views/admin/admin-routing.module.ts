@@ -7,6 +7,7 @@ import { OrderComponent } from './components/order/order.component';
 import{PortfolioComponent} from './components/portfolio/portfolio.component';
 import { ParticipantsComponent } from './components/participants/participants.component'; 
 import { AuthenticationComponent } from './components/authentication/authentication.component'; 
+import { ViewEventDetailsComponent } from './components/view-event-details/view-event-details.component';
 
 const routes: Routes = [
   // { path: '**', redirectTo: 'login' }, // If no route matches, redirect to login//Do not include this as this would not redirect to home page even after successfull log in
@@ -15,8 +16,8 @@ const routes: Routes = [
   { path: 'merchandise', component: MerchandiseComponent},
   { path: 'order', component: OrderComponent},
   { path: 'portfolio', component: PortfolioComponent},
-  { path: 'participants', component: ParticipantsComponent}
-
+  { path: 'participants', component: ParticipantsComponent},
+  { path: 'view-event-details', component: ViewEventDetailsComponent },
   
 ];
 
