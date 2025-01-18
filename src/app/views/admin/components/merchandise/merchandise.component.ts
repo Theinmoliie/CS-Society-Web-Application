@@ -90,7 +90,7 @@ export class MerchandiseComponent {
     });
   }
 
-  logout(): void {
-    this.authservice.logout();
+  logoutAdmin(): void {
+    this.authservice.logoutAdmin();
   }
 }

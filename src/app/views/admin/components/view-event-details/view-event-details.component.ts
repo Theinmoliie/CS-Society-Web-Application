@@ -53,7 +53,7 @@ export class ViewEventDetailsComponent implements OnInit {
     this.router.navigate(['/admin/view-event-details']);  // Or adjust this to the relevant page
   }
 
-  logout(): void {
-    this.authservice.logout();
+  logoutAdmin(): void {
+    this.authservice.logoutAdmin();
   }
 }

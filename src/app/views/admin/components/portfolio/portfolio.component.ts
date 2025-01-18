@@ -170,7 +170,7 @@ export class PortfolioComponent {
     modal.hide();
   }
 
-  logout(): void {
-    this.authservice.logout();
+  logoutAdmin(): void {
+    this.authservice.logoutAdmin();
   }
 }

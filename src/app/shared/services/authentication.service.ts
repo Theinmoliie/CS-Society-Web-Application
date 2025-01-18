@@ -59,5 +59,16 @@ export class Authentication {
         console.error('Logout failed:', error);
       });
   }
+
+  logoutAdmin(): void {
+    signOut(auth)
+      .then(() => {
+        console.log('Logged out');
+        this.router.navigate(['/admin/auth']); // Navigate to login page after logout
+      })
+      .catch((error) => {
+        console.error('Logout failed:', error);
+      });
+  }
 }
 

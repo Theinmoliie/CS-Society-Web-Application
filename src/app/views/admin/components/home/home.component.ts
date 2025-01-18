@@ -51,8 +51,8 @@ export class HomeComponent {
     // Add logic to save or update the event details
   }
 
-  logout(): void {
-    this.authservice.logout();
+  logoutAdmin(): void {
+    this.authservice.logoutAdmin();
   }
 }
 

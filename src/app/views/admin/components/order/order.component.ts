@@ -73,7 +73,7 @@ export class OrderComponent implements OnInit{
     });
   }
   
-  logout(): void {
-    this.authservice.logout();
+  logoutAdmin(): void {
+    this.authservice.logoutAdmin();
   }
 }
