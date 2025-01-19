@@ -12,17 +12,17 @@ export class Authentication {
 
   constructor(private router: Router) {}
 
-  // loginUser(email: string, password: string): Promise<void> {
-  //   return signInWithEmailAndPassword(auth, email, password)
-  //     .then(() => {
-  //       console.log('Login successful');
-  //       this.router.navigate(['/users/home']); // Navigate to home page after login
-  //     })
-  //     .catch(error => {
-  //       console.error('Login failed:', error);
-  //       throw error;
-  //     });
-  // }
+  loginUser(email: string, password: string): Promise<void> {
+     return signInWithEmailAndPassword(auth, email, password)
+       .then(() => {
+         console.log('Login successful');
+         this.router.navigate(['/users/home']); // Navigate to home page after login
+       })
+       .catch(error => {
+         console.error('Login failed:', error);
+         throw error;
+       });
+   }
 
   loginWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
