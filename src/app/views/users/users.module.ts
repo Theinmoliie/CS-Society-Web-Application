@@ -21,6 +21,7 @@ import { ParticipantComponent } from './components/participant/participant.compo
 import { LoginComponent } from './components/login/login.component';
 //import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { ViewEventDetailsComponent } from './components/view-event-details/view-event-details.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     SponsorsubmissionComponent,
     ParticipantComponent,
     LoginComponent,
+    ViewEventDetailsComponent,
     //SignupComponent,
 
 

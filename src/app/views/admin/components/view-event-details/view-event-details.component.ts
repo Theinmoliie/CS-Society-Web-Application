@@ -1,56 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Firestore, doc, getDoc } from '@angular/fire/firestore';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
+import { EventService } from '../../../../shared/services/event.service';
 import { Authentication} from '../../../../shared/services/authentication.service';
 
 @Component({
-  selector: 'app-view-event-details',
+  selector: 'app-admin',
   templateUrl: './view-event-details.component.html',
   styleUrls: ['./view-event-details.component.css']
 })
-export class ViewEventDetailsComponent implements OnInit {
-  event: any = null;
-  eventID: string;
+export class ViewEventDetailsComponent {
+  events: any[] = [];
+  newEvent = { title: '', description: '', date: '', time: '', location: '' };
+  selectedIndex: number | null = null;
+  authservice: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,  // To navigate back
-    private firestore: AngularFirestore, // Firestore service
-    private authservice: Authentication
-  ) {}
-
-  ngOnInit(): void {
-    // Get the eventID from the URL query params
-    this.route.queryParams.subscribe(params => {
-      this.eventID = params['eventID'];  // Extract eventID from query params
-      if (this.eventID) {
-        this.fetchEventDetails();
-      } else {
-        console.error('No event ID found');
-      }
-    });
+  constructor(private eventService: EventService) {
+      this.events = this.eventService.getEvents();
   }
 
-  // Fetch event details from Firestore
-  fetchEventDetails() {
-    const eventRef = doc(this.firestore.firestore, 'events', this.eventID);
-    getDoc(eventRef).then(docSnap => {
-      if (docSnap.exists()) {
-        this.event = docSnap.data();
-      } else {
-        console.error("Event not found!");
-        this.event = null;  // In case event is not found
-      }
-    }).catch(error => {
-      console.error("Error fetching event:", error);
-      this.event = null;  // Set to null if an error occurs
-    });
+  addEvent() {
+    this.eventService.addEvent(this.newEvent);
+    this.newEvent = { title: '', description: '', date: '', time: '', location: '' };
   }
 
-  // Method to go back to the previous page
-  goBack() {
-    this.router.navigate(['/admin/view-event-details']);  // Or adjust this to the relevant page
+  editEvent(index: number) {
+    this.selectedIndex = index;
+    this.newEvent = { ...this.events[index] };
+  }
+
+  updateEvent() {
+    if (this.selectedIndex !== null) {
+      this.eventService.updateEvent(this.selectedIndex, this.newEvent);
+      this.selectedIndex = null;
+      this.newEvent = { title: '', description: '', date: '', time: '', location: '' };
+    }
+  }
+
+  deleteEvent(index: number) {
+    this.eventService.deleteEvent(index);
   }
 
   logoutAdmin(): void {

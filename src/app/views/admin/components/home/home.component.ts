@@ -13,8 +13,7 @@ import { Authentication} from '../../../../shared/services/authentication.servic
 })
 export class HomeComponent {
   constructor(private authservice: Authentication) {}
-
-
+  
   slides = [
     {
       title: 'Log Off Night 2024',

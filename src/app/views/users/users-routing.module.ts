@@ -17,6 +17,7 @@ import { SponsorsubmissionComponent } from './components/sponsorsubmission/spons
 import { LoginComponent } from './components/login/login.component';
 //import { SignupComponent } from './components/signup/signup.component';
 import { userGuard } from './components/user.guard';
+import { ViewEventDetailsComponent } from './components/view-event-details/view-event-details.component';
 
 const routes: Routes = [
   { path: 'loginuser', component: LoginComponent },
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'sponsorscategory' , component: SponsorcategoryComponent},
   { path: 'participation', component: ParticipantComponent },
   { path: 'sponsorsterms' , component:SponsorstermsComponent},
-  { path: 'sponsorsubmission' , component: SponsorsubmissionComponent}
+  { path: 'sponsorsubmission' , component: SponsorsubmissionComponent},
+  { path: 'view-event-details', component: ViewEventDetailsComponent }
 ];
 
 @NgModule({
