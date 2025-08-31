@@ -1,6 +1,7 @@
 # CSSocietyWebApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+A web application developed for the USM Computer Science Society to manage events, including event creation, participant registration, and administrative data management.
 
 ## Development server
 
